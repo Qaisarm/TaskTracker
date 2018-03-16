@@ -17,7 +17,12 @@
 >> Please select one of the following options:
 
 >> Enter (1): To view the Task List
+
 >> Enter (2): To add a new Task to Task List
+
 >> Enter (3): To edit the Task List
+
 >> Enter (4): To remove a Task from the Task List
+
 >> Enter (9): To exit the TaskTracker Application
+
