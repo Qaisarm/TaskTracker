@@ -10,7 +10,9 @@ public class Task {
 	 * Task List file stores the data in a file
 	 */
 	static String fileName = "Task_List.txt";
-	
+	/**
+  * Read the file and Show contents to user
+  */
 void showList() {
 	System.out.println("\nHere is your To-do Task List\n");
 	try {
@@ -26,11 +28,14 @@ void showList() {
 		System.out.println();
 		inFile.close();
 	}
+	// Throws Exception if the file is not readable.
 	catch (IOException ioe) {
 	System.out.print("Can't acess file.\n");
 }
 }
-
+/**
+* Add Task one by one to file
+*/
  void addTask() {
 	 System.out.println("\nAdd Task\n");
 	 try {
@@ -45,7 +50,9 @@ void showList() {
 		System.out.print("Can't acess file.\n");
 	}
 	 }
-	
+	 /**
+	 * Remove the users desired task from file
+	 */
 void removeTask(Object choice) {
 	int choice1;
 	showList();
@@ -72,8 +79,8 @@ void removeTask(Object choice) {
 		System.out.print("Can't acess file.\n");
 	}
 }
-	
 
- 
+
+
 
 }
