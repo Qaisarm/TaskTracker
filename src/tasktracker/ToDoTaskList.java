@@ -6,7 +6,7 @@
  */
 package tasktracker;
 
-import java.io.Serializable;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import java.util.Date;
  *
  * @author qaisarm
  */
-public class ToDoTaskList implements Serializable {
+public class ToDoTaskList{
 
     private String taskList;
     private Date dueDate;
