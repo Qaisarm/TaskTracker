@@ -14,7 +14,8 @@ import static org.junit.Assert.*;
  * @author tmp-sda-1182
  */
 public class ToDoTaskListTest {
-    
+    Date date;
+    ToDoTaskList instance;
     public ToDoTaskListTest() {
     }
     
@@ -28,6 +29,7 @@ public class ToDoTaskListTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -39,8 +41,8 @@ public class ToDoTaskListTest {
      */
     @Test
     public void testGetTaskList() {
-        Date date= new Date();
-        ToDoTaskList instance = new ToDoTaskList ("My New Project", date, "project");
+        date= new Date();
+        instance = new ToDoTaskList ("My New Project", date, "project");
         String expResult = "My New Project";
         String result = instance.getTaskList();
         assertEquals(expResult, result);
@@ -53,8 +55,8 @@ public class ToDoTaskListTest {
     @Test
     public void testGetProjectName() {
         System.out.println("getProjectName");
-        Date date= new Date();
-        ToDoTaskList instance = new ToDoTaskList ("", date, "New Project");
+        date= new Date();
+        instance = new ToDoTaskList ("My New Project", date, "New Project");
         String expResult = "New Project";
         String result = instance.getProjectName();
         assertEquals(expResult, result);
@@ -65,8 +67,8 @@ public class ToDoTaskListTest {
      */
     @Test
     public void testGetStatus() {
-         Date date= new Date();
-        ToDoTaskList instance = new ToDoTaskList ("", date, "");
+        date= new Date();
+        instance = new ToDoTaskList ("", date, "");
         boolean expResult = false;
         boolean result = instance.getStatus();
         assertEquals(expResult, result);
