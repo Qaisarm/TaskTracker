@@ -33,8 +33,8 @@ public class ToDoTaskCollection {
     public void addNewTask() {
         String taskName = getInputTaskName();
         Date dueDate = getInputDueDate();
-        String projectTitle = getInputProjectName();
-        ToDoTaskList t = new ToDoTaskList(taskName, dueDate, projectTitle);
+        String projectName = getInputProjectName();
+        ToDoTaskList t = new ToDoTaskList(taskName, dueDate, projectName);
         taskList.add(t);
     }
 
@@ -142,11 +142,11 @@ public class ToDoTaskCollection {
     /**
      * Filter The Task List by project
      *
-     * @param projectTitle to filter the tasks by Project Name
+     * @param projectName to filter the tasks by Project Name
      */
-    public void filterByProject(String projectTitle) {
+    public void filterByProject(String projectName) {
         taskList.stream()
-                .filter(s -> projectTitle.equals(s.getProjectName()))
+                .filter(s -> projectName.equals(s.getProjectName()))
                 .forEach(s -> System.out.println(s.toString()));
     }
 
@@ -156,7 +156,7 @@ public class ToDoTaskCollection {
      * @param taskName to filter the task Name
      * @return List of tasks
      */
-    public List<ToDoTaskList> filteredByTaskTitle(String taskName) {
+    public List<ToDoTaskList> filteredByTaskName(String taskName) {
         List<ToDoTaskList> result = taskList.stream()
                 .filter(t -> taskName.equals(t.getTaskList()))
                 .collect(Collectors.toList());

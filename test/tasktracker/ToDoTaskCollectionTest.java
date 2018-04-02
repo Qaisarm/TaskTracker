@@ -139,23 +139,23 @@ public class ToDoTaskCollectionTest {
     @Test
     public void testFilterByProject() {
         System.out.println("filterByProject");
-        String projectTitle = "";
+        String projectName = "";
         ToDoTaskCollection instance = new ToDoTaskCollection();
-        instance.filterByProject(projectTitle);
+        instance.filterByProject(projectName);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of filteredByTaskTitle method, of class ToDoTaskCollection.
+     * Test of filteredByTaskName method, of class ToDoTaskCollection.
      */
     @Test
-    public void testFilteredByTaskTitle() {
-        System.out.println("filteredByTaskTitle");
+    public void testfilteredByTaskName() {
+        System.out.println("filteredByTaskName");
         String taskName = "";
         ToDoTaskCollection instance = new ToDoTaskCollection();
         List<ToDoTaskList> expResult = null;
-        List<ToDoTaskList> result = instance.filteredByTaskTitle(taskName);
+        List<ToDoTaskList> result = instance.filteredByTaskName(taskName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
