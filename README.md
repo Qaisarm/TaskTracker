@@ -1,28 +1,13 @@
 # TaskTracker
->>@author  Qaisar Mukhtar
->>@version 2018.03.16
+@author  Qaisar Mukhtar
+@version 2018.04.02
 
- The version 2018.03.16 is a simple version of the TaskTracker Application,
- it simply creats a file to add some Tasks and the user can view the Tasks,
- can add new Tasks and can remove the Tasks form the file.
-
-
-Please read this file before you use this application.
-
-TaskTracker is a To-do list Application​
-
-Welcome to TaskTracker: A To-do List Application 
+ The version 2018.04.02 is modified version of the TaskTracker Application,
+ User can add new Tasks and can edit, remove the Tasks form the Task List.
+ Users can View the Task by Project Name in alphabatical order and by date in decending form
 
 
-Please select one of the following options:
+Please read the User Manual before you use this application.
 
-Enter (1): To view the Task List
 
-Enter (2): To add a new Task to Task List
-
-Enter (3): To edit the Task List
-
-Enter (4): To remove a Task from the Task List
-
-Enter (9): To exit the TaskTracker Application
 
