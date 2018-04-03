@@ -1,3 +1,9 @@
+/**
+ * This class @ DataReader reads the data from file (fileName)
+ * 
+ * 
+ * 
+ */
 package tasktracker;
 
 import java.io.IOException;
@@ -9,7 +15,8 @@ import java.util.List;
 
 /**
  *
- * @author tmp-sda-1178
+ * @author Qaisar Mukhtar
+ * @version 2018-04-02
  */
 public class DataReader {
 
@@ -17,7 +24,7 @@ public class DataReader {
 
     /**
      *
-     * @param fileName
+     * @param fileName intakes the file
      */
     public DataReader(String fileName) {
         this.fileName = fileName;
@@ -25,24 +32,22 @@ public class DataReader {
 
     /**
      *
-     * @return
+     * @return the taskList
      */
     public List<ToDoTaskList> readFromFile() {
 
-        List<ToDoTaskList> taskList = new ArrayList<ToDoTaskList>();
+        List<ToDoTaskList> taskList = new ArrayList<>();
 
         try {
-            ObjectInputStream inStream = new ObjectInputStream(new FileInputStream(fileName));
-            Object record = inStream.readObject();
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(fileName));
+            Object record = inputStream.readObject();
             ToDoTaskList task = (ToDoTaskList) record;
             while (record != null) {
                 taskList.add(task);
-                task = (ToDoTaskList) inStream.readObject();
-
+                task = (ToDoTaskList) inputStream.readObject();
             }
-
-            inStream.close();
-
+            inputStream.close();
+            
         } catch (FileNotFoundException ef) {
             System.out.print(ef.getMessage() + "File not found");
         } catch (IOException e) {

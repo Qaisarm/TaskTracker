@@ -1,3 +1,7 @@
+/**
+ * This class @ DataWriter writes the data to file (fileName)
+ *
+ */
 package tasktracker;
 
 import java.io.FileNotFoundException;
@@ -8,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author tmp-sda-1182
+ * @author Qaisar Mukhtar
  */
 public class DataWriter {
 
@@ -20,7 +24,7 @@ public class DataWriter {
 
     /**
      *
-     * @param toDoTaskList
+     * @param toDoTaskList input parameter
      */
     public void writeToFile(List<ToDoTaskList> toDoTaskList) {
 

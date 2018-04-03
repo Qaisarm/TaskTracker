@@ -5,25 +5,22 @@ import java.util.Scanner;
 
 /**
  *
- * @author tmp-sda-1182
+ * @author Qaisar Mukhtar
  */
 public class TaskTracker {
 
     ToDoTaskCollection taskCollection;
     Scanner scanner;
-    int UserInput;
-	private Scanner input;
 
     public TaskTracker() {
         scanner = new Scanner(System.in);
         taskCollection = new ToDoTaskCollection();
-        taskCollection.readFile();
     }
 
-    /*
- * @ showWlecomeMenu Prints the welcome Menu
+ /**
+ * @ MainMenu Prints the main welcome Menu
  * 
-     */
+ **/
 
     public void MainMenu() {
         System.out.println("******************************");
@@ -34,7 +31,10 @@ public class TaskTracker {
         System.out.println("You have " + taskCollection.numberOfUnCompletedTasks() + " Tasks still to complete");
         System.out.println("******************************");
     }
-
+ /**
+  * @ WelcomeMenu Prints the Option list for User
+  * 
+  **/
     public void WelcomeMenu() {
         System.out.println();
         System.out.println("*******************************");
@@ -51,13 +51,13 @@ public class TaskTracker {
     }
 
     /**
-     *
+     * @ optionMenu takes the options from User
      */
     public void optionMenu() {
         Boolean exit = false;
         while (!exit) {
             WelcomeMenu();
-            input = new Scanner(System.in);
+           Scanner input = new Scanner(System.in);
             String userInput = input.nextLine();
 
             switch (userInput) {
@@ -88,6 +88,10 @@ public class TaskTracker {
         }
     }
 
+    /**
+    * @ showTaskList Handel the Task View by date and project name 
+    * 
+    **/
     private void showTaskList() {
         System.out.println("************************************");
         System.out.println("Enter (1) to View Task List By Date ");
@@ -112,7 +116,9 @@ public class TaskTracker {
                 System.out.print("Please enter the correct no.");
         }
     }
-
+/**
+ * @ editTask modifies the Task by editing task or change status
+ */
     private void editTask() {
         System.out.println("**************************'");
         System.out.println("Enter (1) to Edit the Task List.");
@@ -138,7 +144,9 @@ public class TaskTracker {
                 System.out.print("Please enter the correct Task name.");
         }
     }
-
+/**
+ * @ removeTask removes the Task List
+ */
     private void removeTask() {
         List<ToDoTaskList> result = taskCollection.sortByDate();
         result.stream().forEach((t -> System.out.println(t)));
@@ -155,7 +163,7 @@ public class TaskTracker {
 
     /**
      *
-     * @param outputText
+     * @param outputText message to print
      * @return
      */
     int readInt(String outputText) {
@@ -176,11 +184,6 @@ public class TaskTracker {
         return readInt(null);
     }
 
-    /**
-     *
-     * @param outputText
-     * @return
-     */
     String readString(String outputText) {
         if (outputText != null) {
             System.out.println(outputText);

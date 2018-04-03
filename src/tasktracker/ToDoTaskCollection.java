@@ -249,7 +249,7 @@ public class ToDoTaskCollection {
         while (it.hasNext()) {
             if (it.next().getTaskList().equals(input)) {
                 it.remove();
-                System.out.println("Tasl List Deleted......");
+                System.out.println("Task List Deleted......");
                 isFound = true;
             }
         }

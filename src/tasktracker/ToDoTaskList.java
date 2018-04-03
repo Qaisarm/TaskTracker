@@ -1,8 +1,5 @@
 /*
- * This class is the part of the Todo application. To do application is a simple application that
- *allows user to add, remove and a edit a ToDoTaskList. Application receives input via console.
- *
- * This class is provides the ToDoTaskList object that stores information of ToDoTaskList. 
+ * 
  */
 package tasktracker;
 
@@ -12,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author qaisarm
+ * @author Qaisar Mukhtar
  */
 public class ToDoTaskList implements Serializable {
 
@@ -24,8 +21,9 @@ public class ToDoTaskList implements Serializable {
     /**
      * Constructor for class ToDoTaskList
      *
-     * @param project- Name of the project 
-     * @param date - the date object that contain the due date of the task
+     * @param List input parameter for taskList
+     * @param project Name of the project 
+     * @param date  the date object that contain the due date of the task
      */
     public ToDoTaskList(String List, Date date, String project) {
 
@@ -46,26 +44,28 @@ public class ToDoTaskList implements Serializable {
 
     /**
      * 
-     *
      * @return the due date of Task
      */
     public Date getDueDate() {
         return this.dueDate;
-
     }
-
+    /**
+     * @return the project Name
+     */
     public String getProjectName() {
         return this.projectName;
     }
-
+    /**
+     * @return the status of Task
+     */
     public boolean getStatus() {
         return this.isDone;
     }
 
     /**
-     * Sets new Name of the Task
+     * Sets new Name of the Task List
      *
-     * @param String list
+     * @param list
      */
     public void setList(String list) {
         this.taskList = list;
@@ -74,7 +74,7 @@ public class ToDoTaskList implements Serializable {
     /**
      * Sets new date to TaskList
      *
-     * @param object date
+     * @param date
      */
     public void setDueDate(Date date) {
         this.dueDate = date;
@@ -109,8 +109,7 @@ public class ToDoTaskList implements Serializable {
 
     @Override
     /**
-     * Override the String method, representing the string representation of
-     * TaskList object
+     * Overrides the String method and shows the string of TaskList object
      *
      * @return the string representation of Task object
      */
