@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  *
- * @author tmp-sda-1182
+ * @author Qaisar Mukhtar
  */
 public class ToDoTaskCollection {
 
@@ -31,11 +31,11 @@ public class ToDoTaskCollection {
      * Adds a new Task To the Task List
      */
     public void addNewTask() {
+        String projectName = getInputProjectName();
         String taskName = getInputTaskName();
         Date dueDate = getInputDueDate();
-        String projectName = getInputProjectName();
-        ToDoTaskList t = new ToDoTaskList(taskName, dueDate, projectName);
-        taskList.add(t);
+        ToDoTaskList task = new ToDoTaskList(taskName, dueDate, projectName);
+        taskList.add(task);
     }
 
     public List<ToDoTaskList> getTaskList() {
@@ -53,14 +53,14 @@ public class ToDoTaskCollection {
             Iterator<ToDoTaskList> it = taskList.iterator();
             boolean isUppdated = false;
             while (it.hasNext()) {
-                ToDoTaskList t = it.next();
-                if (t.getTaskList().equalsIgnoreCase(searchTaskName)) {
-                    String title = getInputTaskName();
-                    t.setList(title);
+                ToDoTaskList task = it.next();
+                if (task.getTaskList().equalsIgnoreCase(searchTaskName)) {
+                    String taskName = getInputTaskName();
+                    task.setList(taskName);
                     Date date = getInputDueDate();
-                    t.setDueDate(date);
+                    task.setDueDate(date);
                     String projectName = getInputProjectName();
-                    t.setProjectName(projectName);
+                    task.setProjectName(projectName);
                     isUppdated = true;
                 }
             }
@@ -80,9 +80,9 @@ public class ToDoTaskCollection {
             Iterator<ToDoTaskList> it = taskList.iterator();
             boolean isUppdated = false;
             while (it.hasNext()) {
-                ToDoTaskList t = it.next();
-                if (t.getTaskList().equalsIgnoreCase(searchTaskName)) {
-                    t.setStatusDone();
+                ToDoTaskList task = it.next();
+                if (task.getTaskList().equalsIgnoreCase(searchTaskName)) {
+                    task.setStatusDone();
                     isUppdated = true;
                     System.out.println("Task Status uppdated .......");
                 }
@@ -104,7 +104,7 @@ public class ToDoTaskCollection {
      * @return Task Name
      */
     public String getInputTaskName() {
-        return getInputMsg("Add to Task List");
+        return getInputMsg(" a Task Name");
     }
 
     /**
@@ -153,7 +153,7 @@ public class ToDoTaskCollection {
     /**
      * Filters the Task List by Task Name
      *
-     * @param taskName to filter the task Name
+     * @param taskName to filter the Task Name
      * @return List of tasks
      */
     public List<ToDoTaskList> filteredByTaskName(String taskName) {
@@ -175,7 +175,7 @@ public class ToDoTaskCollection {
     }
 
     /**
-     * return the list the UnCompleted tasks
+     * returns list the UnCompleted tasks
      *
      * @return List of tasks
      */
@@ -187,18 +187,18 @@ public class ToDoTaskCollection {
     }
 
     /**
-     * Counts the no of completed task and returns the no. of them
+     * Counts the number of completed task and returns the number of Tasks
      *
-     * @return no of complected tasks
+     * @return Number of completed tasks
      */
     public int numberOfCompletedTasks() {
         return getCompletedTasks().size();
     }
 
     /**
-     * Counts the no of uncompleted tasks
+     * Counts the number of uncompleted tasks
      *
-     * @return no of complected tasks
+     * @return no of uncompleted tasks
      */
     public int numberOfUnCompletedTasks() {
         return getUnCompletedTasks().size();
@@ -207,7 +207,7 @@ public class ToDoTaskCollection {
     /**
      * Sorts the tasks according to the due date and returns the list
      *
-     * @return the sorted array
+     * @return  ArrayList
      */
     public List<ToDoTaskList> sortByDate() {
         return taskList.stream()
@@ -239,9 +239,9 @@ public class ToDoTaskCollection {
     }
 
     /**
-     * Removes the task from the list and searched by title
+     * searches the Tasks by Name  and Removes the task from the list
      *
-     * @param input the title of the task to be deleted
+     * @param input the Name of the task desired to delete
      */
     public void removeTask(String input) {
         boolean isFound = false;
@@ -266,7 +266,7 @@ public class ToDoTaskCollection {
     }
 
     /**
-     * reads the file from the list
+     * reads the TaskList from the file
      */
     public void readFile() {
         List<ToDoTaskList> outTaskList = dataReader.readFromFile();

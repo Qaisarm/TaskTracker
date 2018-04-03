@@ -6,6 +6,7 @@
  */
 package tasktracker;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -13,7 +14,7 @@ import java.util.Date;
  *
  * @author qaisarm
  */
-public class ToDoTaskList{
+public class ToDoTaskList implements Serializable {
 
     private String taskList;
     private Date dueDate;
@@ -23,7 +24,7 @@ public class ToDoTaskList{
     /**
      * Constructor for class ToDoTaskList
      *
-     * @param project- Name of the project that task belongs to
+     * @param project- Name of the project 
      * @param date - the date object that contain the due date of the task
      */
     public ToDoTaskList(String List, Date date, String project) {
@@ -36,18 +37,17 @@ public class ToDoTaskList{
     }
 
     /**
-     * Return the <code> Title </code> of the task
      *
-     * @return task title
+     * @return taskList
      */
     public String getTaskList() {
         return this.taskList;
     }
 
     /**
-     * Returns the due date
+     * 
      *
-     * @return due date
+     * @return the due date of Task
      */
     public Date getDueDate() {
         return this.dueDate;
@@ -60,22 +60,21 @@ public class ToDoTaskList{
 
     public boolean getStatus() {
         return this.isDone;
-
     }
 
     /**
-     * Sets the new value to the list
+     * Sets new Name of the Task
      *
-     * @param list string list
+     * @param String list
      */
     public void setList(String list) {
         this.taskList = list;
     }
 
     /**
-     * Sets the new date
+     * Sets new date to TaskList
      *
-     * @param date object date
+     * @param object date
      */
     public void setDueDate(Date date) {
         this.dueDate = date;
@@ -111,7 +110,7 @@ public class ToDoTaskList{
     @Override
     /**
      * Override the String method, representing the string representation of
-     * Task object
+     * TaskList object
      *
      * @return the string representation of Task object
      */

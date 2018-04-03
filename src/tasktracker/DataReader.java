@@ -27,10 +27,9 @@ public class DataReader {
      *
      * @return
      */
-    @SuppressWarnings("ConvertToTryWithResources")
     public List<ToDoTaskList> readFromFile() {
 
-        List<ToDoTaskList> taskList = new ArrayList();
+        List<ToDoTaskList> taskList = new ArrayList<ToDoTaskList>();
 
         try {
             ObjectInputStream inStream = new ObjectInputStream(new FileInputStream(fileName));

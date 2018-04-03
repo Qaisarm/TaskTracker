@@ -12,6 +12,7 @@ public class TaskTracker {
     ToDoTaskCollection taskCollection;
     Scanner scanner;
     int UserInput;
+	private Scanner input;
 
     public TaskTracker() {
         scanner = new Scanner(System.in);
@@ -56,7 +57,7 @@ public class TaskTracker {
         Boolean exit = false;
         while (!exit) {
             WelcomeMenu();
-            Scanner input = new Scanner(System.in);
+            input = new Scanner(System.in);
             String userInput = input.nextLine();
 
             switch (userInput) {
